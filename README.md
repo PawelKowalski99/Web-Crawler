@@ -1,6 +1,10 @@
 # SiteScrap Web Crawler
 This project scraps url's domain and makes map of this site.
 ## Installing
+Be sure that you have got virtualenvironment module on computer installed. <br/>
+```
+pip install virtualenv
+```
 Firstly you need to make virtual environment
 ```
 python3 -m venv /path/to/new/virtual/environment
