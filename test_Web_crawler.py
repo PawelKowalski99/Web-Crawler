@@ -1,5 +1,5 @@
 import pytest
-from Web_crawler import site_map, site_map_inside
+from web_crawler import site_map, site_map_inside
 
 
 @pytest.mark.parametrize('url, expected_result', [
