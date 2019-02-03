@@ -32,5 +32,5 @@ web_crawler.py
 ## Tests
 To run tests you need to run
 ```
-test_web_crawler.py
+pytest
 ```
