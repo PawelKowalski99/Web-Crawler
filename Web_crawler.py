@@ -23,6 +23,7 @@ def site_map_inside(url, map, domain, i):
                 page = requests.get(url)
                 soup = BeautifulSoup(page.text, 'html.parser')
             except requests.exceptions.ConnectionError:
+
                 return map
             map[url] = {}
             try:
@@ -37,7 +38,6 @@ def site_map_inside(url, map, domain, i):
                             map[url]['links'].add(urljoin(url, link_text))
                         elif not map[url].get('links') and urljoin(url, link_text):
                             map[url]['links'] = {urljoin(url, link_text)}
-
                         site_map_inside(urljoin(url, link_text), map, domain, i + 1)
     return map
 
@@ -45,7 +45,7 @@ def site_map_inside(url, map, domain, i):
 def site_map(url):
     """
     It is function that gets as argument site wanted to be mapped.
-    :param url: is link to page that is going to be mapped
+    :param url: is link to page that is going to be mapped. Needs to be started with https or http.
     :return: a mapping of that url as a Python dictionary
     """
     domain = url
@@ -56,4 +56,4 @@ def site_map(url):
 
 
 if __name__ == '__main__':
-    items = site_map('https://azumbrunnen.me/')
+    items = site_map('http://0.0.0.0:8000')

@@ -1,5 +1,5 @@
 import pytest
-from Scrapper import site_map, site_map_inside
+from Web_crawler import site_map, site_map_inside
 
 
 @pytest.mark.parametrize('url, expected_result', [
@@ -659,7 +659,7 @@ def test_site_map(url, expected_result):
        'https://azumbrunnen.me/blog/designing-with-purpose/',
        'https://azumbrunnen.me/blog/taking-responsibility-for-the-things-you-launch/'}}}
      ),
-    ('http://fagaagfas.com', {}, 'http://fagaagfas.com', 1, {})
+    ('http://fagaagfas.com', {}, 'http://fagaagfas.com', 1, {}),
 ])
 def test_site_map_inside(url, map, domain, i, expected_result):
     result = site_map_inside(url, map, domain, i)
