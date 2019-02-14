@@ -1,6 +1,10 @@
 # SiteScrap Web Crawler
 This project scraps url's domain and makes map of this site.
 ## Installing
+Be sure that you have got virtualenvironment module on computer installed. <br/>
+```
+pip install virtualenv
+```
 Firstly you need to make virtual environment
 ```
 python3 -m venv /path/to/new/virtual/environment
@@ -21,7 +25,7 @@ If you are not in
 Go there.
 Then
 ```
-pip install -r /path/to/requirements.txt
+pip install -r /path/to/requirements.txt/Web-Crawler
 ```
 Good job! You can now run web crawler by running the command in command line
 Remember that you need to be in this directory nad you have to run virtual environment also!
@@ -32,5 +36,5 @@ web_crawler.py
 ## Tests
 To run tests you need to run
 ```
-test_web_crawler.py
+pytest
 ```
