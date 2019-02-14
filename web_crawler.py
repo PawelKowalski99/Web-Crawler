@@ -51,7 +51,6 @@ def site_map(url):
     domain = url
     scrapped_website = {}
     scrapped_website = site_map_inside(url, scrapped_website, domain, 1)
-    print(scrapped_website)
     return scrapped_website
 
 
