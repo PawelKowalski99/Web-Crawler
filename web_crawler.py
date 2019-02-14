@@ -56,4 +56,4 @@ def site_map(url):
 
 
 if __name__ == '__main__':
-    items = site_map('http://0.0.0.0:8000')
+    site_map('http://0.0.0.0:8000')
