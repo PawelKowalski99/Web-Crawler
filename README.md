@@ -28,9 +28,9 @@ Then
 pip install -r /path/to/requirements.txt/Web-Crawler
 ```
 Good job! You can now run web crawler by running the command in command line
-Remember that you need to be in this directory nad you have to run virtual environment also!
+Remember that you need to be in this directory and you have to run virtual environment also!
 ```
-web_crawler.py
+python web_crawler.py
 ```
 
 ## Tests
