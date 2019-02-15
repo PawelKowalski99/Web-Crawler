@@ -20,19 +20,22 @@ Let's go inside venv
 You should now install all required files
 If you are not in 
 ```
- /path/to/new/virtual/environment
+ /path/to/new/virtual/environment/Web-Crawler
 ```
 Go there.
 Then
 ```
-pip install -r /path/to/requirements.txt/Web-Crawler
+pip install -r requirements.txt
 ```
 Good job! You can now run web crawler by running the command in command line
-Remember that you need to be in this directory nad you have to run virtual environment also!
+Remember that you need to be in this directory and you have to run virtual environment also!
 ```
-web_crawler.py
+python web_crawler.py
 ```
-
+If you want to exit virtual environment type:
+```
+deactivate
+```
 ## Tests
 To run tests you need to run
 ```
