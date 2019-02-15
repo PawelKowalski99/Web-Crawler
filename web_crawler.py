@@ -30,15 +30,18 @@ def site_map_inside(url, map, domain, i):
                 map[url]['title'] = soup.head.title.text
             except AttributeError:
                 print("Attribute Error")
-            for link in soup.find_all('a'):
-                link_text: object = link.get('href')
-                if str(urljoin(url, link_text)).startswith(domain):
-                    if link_text is not None and domain in urljoin(url, link_text):
-                        if map[url].get('links') and not urljoin(url, link_text) in map[url]['links']:
-                            map[url]['links'].add(urljoin(url, link_text))
-                        elif not map[url].get('links') and urljoin(url, link_text):
-                            map[url]['links'] = {urljoin(url, link_text)}
-                        site_map_inside(urljoin(url, link_text), map, domain, i + 1)
+            if not soup.find_all('a'):
+                map[url]['links'] = 'set()'
+            else:
+                for link in soup.find_all('a'):
+                    link_text: object = link.get('href')
+                    if str(urljoin(url, link_text)).startswith(domain) and link_text is not None:
+                        if domain in urljoin(url, link_text):
+                            if map[url].get('links') and not urljoin(url, link_text) in map[url]['links']:
+                                map[url]['links'].add(urljoin(url, link_text))
+                            elif not map[url].get('links') and urljoin(url, link_text):
+                                map[url]['links'] = {urljoin(url, link_text)}
+                            site_map_inside(urljoin(url, link_text), map, domain, i + 1)
     return map
 
 
@@ -54,5 +57,9 @@ def site_map(url):
     return scrapped_website
 
 
+site = 'http://0.0.0.0:8000/'
+#site = 'http://127.0.0.1:8000/'
+
+
 if __name__ == '__main__':
-    site_map('http://0.0.0.0:8000')
+    site_map(site)
